@@ -94,11 +94,12 @@ Make sure fuel-master boots correctly and wait for the  'systemctl list-jobs' to
 
 the output should have rule similar to the following
 
+```
 -A PREROUTING -d 169.54.100.74/32 -p tcp -m tcp --dport 443 -j DNAT --to-destination 10.20.0.2:443
 -A PREROUTING -d 169.54.100.74/32 -p tcp -m tcp --dport 8443 -j DNAT --to-destination 10.20.0.2:8443
 -A FORWARD -d 10.20.0.2/32 -p tcp -m state --state NEW -m tcp --dport 8443 -j ACCEPT
 -A FORWARD -d 10.20.0.2/32 -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
-
+```
 
 ###7- create the OS VMs
 
