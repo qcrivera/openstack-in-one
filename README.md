@@ -20,13 +20,15 @@ add a connection to the host
   
   b- go to the terminal screen were you started virt manager and type the root password
 
+#### the following steps are to be executed in your server
+
 ###2- install some base packages 
 
 ```
 sudo apt-get install -y puppet-common qemu-kvm libvirt-bin python-swiftclient git virtinst
 ```
 
-###3- go to the files directory
+###3- after cloning this repo go to the files directory
 
 ```
 sed 's/Host_ipaddr=/Host_ipaddr=$(facter ipaddress_bond1)/g' qemu-test > /etc/libvirt/hooks/qemu
