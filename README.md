@@ -55,7 +55,7 @@ virsh net-autostart tagged-net
 mkdir /iso
 ```
 
-* mv <your-git-clone-location>/ipxe.iso /iso
+* mv your-git-clone-location/ipxe.iso /iso
   
 * download MOS to /iso
 
