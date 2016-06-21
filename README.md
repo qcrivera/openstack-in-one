@@ -3,17 +3,20 @@
 ##Instructions:
 
 1. Prepare your environment
-*Provision a Ubuntu 14.04 LTS Trusty 64 bit server
-*In your linux PC add the packacge 'virt-manager' 
+* Provision a Ubuntu 14.04 LTS Trusty 64 bit server
+* In your linux PC add the packacge 'virt-manager' 
 ```
 sudo apt-get install virt-manager
 ```
-*open virt-manager
+* open virt-manager
 ```
 virt-manager --no-fork
 ```
-*add a connection to the host
-.*safds
+* add a connection to the host
+
+  a- File/Add Connection/Conect to remote host/fill in hostname/click connect
+  
+  b- go to the terminal screen were you started virt manager and type the root password
 
 2. install some base packages 
 
