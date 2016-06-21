@@ -15,6 +15,7 @@ mv qemu /etc/libvirt/hooks
 
 virsh net-destroy default
 virsh net-undefine default
+
 virsh net-define pxe-net.xml
 virsh net-start pxe-net
 virsh net-autostart pxe-net
@@ -42,7 +43,7 @@ virsh net-autostart tagged-net
 mkdir /vms
 
 sudo virt-install -n fuel-master -r 8192 \
--f /vms/fuel-master.qcow2 -s 300 \
+-f /vms/fuel-master.qcow2 -s 100 \
 -c /images/MirantisOpenStack-8.0.iso \
 --network network=pxe-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
@@ -54,7 +55,7 @@ sudo virt-install -n fuel-master -r 8192 \
 #fuel has to be up an running before you go ahead with this step
 
 sudo virt-install -n compute1 -r 32768 \
--f /vms/compute1.qcow1 -s 100 \
+-f /vms/compute1.qcow2 -s 100 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
@@ -63,7 +64,7 @@ sudo virt-install -n compute1 -r 32768 \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
 sudo virt-install -n compute2 -r 32768 \
--f /vms/compute2.qcow1 -s 100 \
+-f /vms/compute2.qcow2 -s 100 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
@@ -72,7 +73,7 @@ sudo virt-install -n compute2 -r 32768 \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
 sudo virt-install -n compute3 -r 32768 \
--f /vms/compute3.qcow1 -s 100 \
+-f /vms/compute3.qcow2 -s 100 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
@@ -81,7 +82,7 @@ sudo virt-install -n compute3 -r 32768 \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
 sudo virt-install -n controller -r 8192 \
--f /vms/controller.qcow1 -s 100 \
+-f /vms/controller.qcow2 -s 100 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
