@@ -4,7 +4,7 @@
 # Update the following variables to fit your setup
 Guest_name=fuel-master
 Guest_ipaddr=10.20.0.2
-Host_ipaddr=169.54.100.74
+Host_ipaddr=
 Host_port=(  '443' '8443' )
 Guest_port=( '443' '8443' )
 
