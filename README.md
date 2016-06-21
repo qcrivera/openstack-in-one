@@ -26,8 +26,7 @@ add a connection to the host
 sudo apt-get install -y puppet-common qemu-kvm libvirt-bin python-swiftclient git virtinst
 ```
 
-###3-
-go to the files directory
+###3- go to the files directory
 
 ```
 sed 's/Host_ipaddr=/Host_ipaddr=$(facter ipaddress_bond1)/g' qemu-test > /etc/libvirt/hooks/qemu
@@ -77,7 +76,29 @@ systemctl list-jobs
 ```
 
 the list should be epty
-###6- create the OS VMs
+
+###6- Apply NAT rules to access fuel
+
+```
+service libvirt-bin restart
+virsh destroy fuel-master
+virsh start fuel-master
+```
+
+Make sure fuel-master boots correctly and wait for the  'systemctl list-jobs' to return no jobs 
+
+```1iptables-save
+```
+
+the output should have rule similar to the following
+
+-A PREROUTING -d 169.54.100.74/32 -p tcp -m tcp --dport 443 -j DNAT --to-destination 10.20.0.2:443
+-A PREROUTING -d 169.54.100.74/32 -p tcp -m tcp --dport 8443 -j DNAT --to-destination 10.20.0.2:8443
+-A FORWARD -d 10.20.0.2/32 -p tcp -m state --state NEW -m tcp --dport 8443 -j ACCEPT
+-A FORWARD -d 10.20.0.2/32 -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
+
+
+###7- create the OS VMs
 
 ####fuel has to be up an running before you go ahead with this step
 
