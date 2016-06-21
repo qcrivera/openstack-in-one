@@ -1,0 +1,1 @@
+<network> <name>tagged-net</name> <bridge name="virbr3" /> </network>
