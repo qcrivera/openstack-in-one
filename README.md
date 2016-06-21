@@ -58,7 +58,7 @@ mkdir /iso
   
 * download MOS to /iso
 
-5. Create the fuel VMs
+###5- Create the fuel VM
 
 ```
 mkdir /vms
@@ -68,74 +68,54 @@ sudo virt-install -n fuel-master -r 8192 \
 --network network=pxe-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 ```
-*you must go into the installtion fuelmenu and edit the PXE network to have 10.20.0.1 and not the default .2
+using virt-manager you must go into the installtion fuelmenu and edit the PXE network to have 10.20.0.1 and not the default .2
 
-6- create the OS VMs
+Wait until the installation is done and login to the fuel node
 
-#fuel has to be up an running before you go ahead with this step
+```
+systemctl list-jobs
+```
 
-sudo virt-install -n compute1 -r 32768 \
+the list should be epty
+###6- create the OS VMs
 
+####fuel has to be up an running before you go ahead with this step
+
+```
+sudo virt-install -n compute1 -r 32768 
 -f /vms/compute1.qcow2 -s 100 \
-
 -c /iso/ipxe.iso \
-
 --network network=pxe-net,model=virtio \
-
 --network network=public-net,model=virtio \
-
 --network network=private-net,model=virtio \
-
 --network network=tagged-net,model=virtio \
-
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
 sudo virt-install -n compute2 -r 32768 \
-
 -f /vms/compute2.qcow2 -s 100 \
-
 -c /iso/ipxe.iso \
-
 --network network=pxe-net,model=virtio \
-
 --network network=public-net,model=virtio \
-
 --network network=private-net,model=virtio \
-
 --network network=tagged-net,model=virtio \
-
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
-
 sudo virt-install -n compute3 -r 32768 \
-
 -f /vms/compute3.qcow2 -s 100 \
-
 -c /iso/ipxe.iso \
-
 --network network=pxe-net,model=virtio \
-
 --network network=public-net,model=virtio \
-
 --network network=private-net,model=virtio \
-
 --network network=tagged-net,model=virtio \
-
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
 sudo virt-install -n controller -r 8192 \
-
 -f /vms/controller.qcow2 -s 100 \
-
 -c /iso/ipxe.iso \
-
 --network network=pxe-net,model=virtio \
-
 --network network=public-net,model=virtio \
-
 --network network=private-net,model=virtio \
-
 --network network=tagged-net,model=virtio \
-
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 
+```
