@@ -2,29 +2,32 @@
 
 ##Instructions:
 
-1. Prepare your environment
-* Provision a Ubuntu 14.04 LTS Trusty 64 bit server
-* In your linux PC add the packacge 'virt-manager' 
+###1- Prepare your environment
+
+Provision a Ubuntu 14.04 LTS Trusty 64 bit server
+
+In your linux PC add the packacge 'virt-manager' 
 ```
 sudo apt-get install virt-manager
 ```
-* open virt-manager
+open virt-manager
 ```
 virt-manager --no-fork
 ```
-* add a connection to the host
+add a connection to the host
 
   a- File/Add Connection/Conect to remote host/fill in hostname/click connect
   
   b- go to the terminal screen were you started virt manager and type the root password
 
-2. install some base packages 
+###2- install some base packages 
 
 ```
 sudo apt-get install -y puppet-common qemu-kvm libvirt-bin python-swiftclient git virtinst
 ```
 
-3. go to the files directory
+###3-
+go to the files directory
 
 ```
 sed 's/Host_ipaddr=/Host_ipaddr=$(facter ipaddress_bond1)/g' qemu-test > /etc/libvirt/hooks/qemu
@@ -45,7 +48,7 @@ virsh net-start taggedc-net
 virsh net-autostart tagged-net
 ```
 
-4. Prepare the environment with the needed isos
+###4- Prepare the environment with the needed isos
 
 ```
 mkdir /iso
