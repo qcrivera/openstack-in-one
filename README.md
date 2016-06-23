@@ -65,6 +65,10 @@ mkdir /iso
   
 * download MOS to /iso
 
+Can be downloaded from
+
+https://software.mirantis.com/openstack-download-form/
+
 ###5- Create the fuel VM
 
 ```
