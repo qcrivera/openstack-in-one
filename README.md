@@ -161,9 +161,9 @@ sudo virt-install -n controller -r 8192 \
 
 1. Select the 8192 RAM node as controller
 2. Select the 3 32768 noses as compute
-3. Configure the interface order according to the configs/interfa-order.png filef
+3. Configure the interface order according to the configs/interfa-order.png file
 4. Configure networking according to the configs/Fuel-networks.png and configs/floating-network.png files
-Deploy and wait 
+5. Deploy and wait 
 
 
 *after Ubuntu is installed you might need to go into virt-manager and manully start the VMs, the rest of the process will continue automatically
