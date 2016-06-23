@@ -101,7 +101,8 @@ virsh start fuel-master
 
 Make sure fuel-master boots correctly and wait for the  'systemctl list-jobs' to return no jobs 
 
-```1iptables-save
+```
+iptables-save
 ```
 
 the output should have rule similar to the following
