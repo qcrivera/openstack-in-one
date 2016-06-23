@@ -87,7 +87,7 @@ Wait until the installation is done and login to the fuel node
 systemctl list-jobs
 ```
 
-the list should be epty
+the list should be empty
 
 ###6- Apply NAT rules to access fuel
 
