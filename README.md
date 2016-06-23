@@ -1,5 +1,11 @@
 #Deploy Mirantis OpenStack in one server
 
+##Assumptions:
+
+1. You have a bare-metal server with at least 64 gigs of RAM and 10 CPU cores.
+2. The server has a public IP address that has access to Internet
+3. The public IP address is assigned to a bond1 interface
+
 ##Instructions:
 
 ###1- Prepare your environment
@@ -143,3 +149,8 @@ sudo virt-install -n controller -r 8192 \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 
 ```
+
+###7- Add some configs for remote access
+
+
+
