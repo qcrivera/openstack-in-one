@@ -152,7 +152,20 @@ sudo virt-install -n controller -r 8192 \
 
 ```
 
-###7- Add some configs for remote access
+###7- Deploy minrantis Openstack
 
+Select the 8192 RAM node as controller
+Select the 3 32768 noses as compute
+Configure the interface order according to the configs/interfa-order.png filef
+Configure networking according to the configs/Fuel-networks.png and configs/floating-network.png files
+Deploy and wait 
+
+*after Ubuntu is installed you might need to go into virt-manager and manully start the VMs, the rest of the process will continue automatically
+
+###8- Add some configs for remote access
+
+Login into 
+
+Execute the ```iptables.sh``` scritp inside the files directory. 
 
 
