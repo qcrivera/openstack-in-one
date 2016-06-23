@@ -87,6 +87,8 @@ the list should be epty
 
 ###6- Apply NAT rules to access fuel
 
+We will activate the confiuration performed by the /etc/libvirt/hooks/qemu script from step 3
+
 ```
 service libvirt-bin restart
 virsh destroy fuel-master
