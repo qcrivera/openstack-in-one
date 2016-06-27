@@ -159,7 +159,7 @@ sudo virt-install -n controller -r 8192 \
 
 ```
 
-###7- Deploy minrantis Openstack
+###7- Deploy Minantis Openstack
 
 1. Select the 8192 RAM node as controller
 2. Select the 3 32768 noses as compute
