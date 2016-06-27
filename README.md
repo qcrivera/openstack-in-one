@@ -83,6 +83,8 @@ using virt-manager you must go into the installtion fuelmenu and edit the PXE ne
 
 Wait until the installation is done and login to the fuel node
 
+*after installation is done you might need to go into virt-manager and manully start the VMs, the rest of the process will continue automatically
+
 ```
 systemctl list-jobs
 ```
