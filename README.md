@@ -79,7 +79,7 @@ sudo virt-install -n fuel-master -r 8192 \
 --network network=pxe-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 ```
-using virt-manager you must go into the installtion fuelmenu and edit the PXE network to have 10.20.0.1 and not the default .2
+using virt-manager you must go into the installtion fuelmenu and edit the PXE network to have 10.20.0.1 as the gateway and not the default .2
 
 Wait until the installation is done and login to the fuel node
 
