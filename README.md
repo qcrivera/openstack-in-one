@@ -75,7 +75,7 @@ https://software.mirantis.com/openstack-download-form/
 mkdir /vms
 sudo virt-install -n fuel-master -r 8192 \
 -f /vms/fuel-master.qcow2 -s 150 \
--c /images/MirantisOpenStack-8.0.iso \
+-c /iso/MirantisOpenStack-8.0.iso \
 --network network=pxe-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 ```
