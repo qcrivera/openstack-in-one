@@ -37,7 +37,7 @@ sudo apt-get install -y puppet-common qemu-kvm libvirt-bin python-swiftclient gi
 ###3- after cloning this repo go to the files directory
 
 ```
-sed 's/Host_ipaddr=/Host_ipaddr=$(facter ipaddress_bond1)/g' qemu > /etc/libvirt/hooks/qemu
+sed -e "s/Host_ipaddr=/Host_ipaddr=$(facter ipaddress_bond1)/g" qemu > /etc/libvirt/hooks/qemu
 chmod 777 /etc/libvirt/hooks/qemu
 virsh net-destroy default
 virsh net-undefine default
