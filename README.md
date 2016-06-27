@@ -51,7 +51,7 @@ virsh net-define private-net.xml
 virsh net-start private-net
 virsh net-autostart private-ne
 virsh net-define tagged-net.xml
-virsh net-start taggedc-net
+virsh net-start tagged-net
 virsh net-autostart tagged-net
 ```
 
