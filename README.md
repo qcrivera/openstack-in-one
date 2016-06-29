@@ -31,6 +31,7 @@ add a connection to the host
 ###2- install some base packages 
 
 ```
+sudo apt-get update
 sudo apt-get install -y puppet-common qemu-kvm libvirt-bin python-swiftclient git virtinst
 ```
 
