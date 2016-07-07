@@ -98,8 +98,6 @@ We will activate the confiuration performed by the /etc/libvirt/hooks/qemu scrip
 
 ```
 service libvirt-bin restart
-virsh destroy fuel-master
-virsh start fuel-master
 ```
 
 Make sure fuel-master boots correctly and wait for the  'systemctl list-jobs' to return no jobs 
@@ -122,7 +120,7 @@ the output should have rule similar to the following
 ####fuel has to be up an running before you go ahead with this step
 
 ```
-sudo virt-install -n compute1 -r 32768 
+sudo virt-install -n compute1 -r 32768 \
 -f /vms/compute1.qcow2 -s 100 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
