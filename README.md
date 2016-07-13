@@ -36,9 +36,11 @@ sudo apt-get update
 sudo apt-get install -y puppet-common qemu-kvm libvirt-bin python-swiftclient git virtinst
 ```
 
-###3- after cloning this repo go to the files directory
+###3- Clone this repo and prepare the virtualization host
 
 ```
+git clone https://github.com/qcrivera/openstack-in-one.git
+cd openstack-in-one/files
 sed -e "s/Host_ipaddr=/Host_ipaddr=$(facter ipaddress_bond1)/g" qemu > /etc/libvirt/hooks/qemu
 chmod 777 /etc/libvirt/hooks/qemu
 virsh net-destroy default
@@ -51,7 +53,7 @@ virsh net-start public-net
 virsh net-autostart public-net
 virsh net-define private-net.xml
 virsh net-start private-net
-virsh net-autostart private-ne
+virsh net-autostart private-net
 virsh net-define tagged-net.xml
 virsh net-start tagged-net
 virsh net-autostart tagged-net
