@@ -14,6 +14,7 @@ Provision a Ubuntu 14.04 LTS Trusty 64 bit server
 
 In your linux PC add the packacge 'virt-manager' 
 ```
+sudo apt-get update
 sudo apt-get install virt-manager
 ```
 open virt-manager
