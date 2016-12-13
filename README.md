@@ -51,9 +51,9 @@ virsh net-autostart pxe-net
 virsh net-define public-net.xml
 virsh net-start public-net
 virsh net-autostart public-net
-virsh net-define private-net.xml
-virsh net-start private-net
-virsh net-autostart private-net
+virsh net-define management-net.xml
+virsh net-start management-net
+virsh net-autostart management-net
 virsh net-define tagged-net.xml
 virsh net-start tagged-net
 virsh net-autostart tagged-net
