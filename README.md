@@ -79,7 +79,7 @@ https://software.mirantis.com/openstack-download-form/
 mkdir /vms
 sudo virt-install -n fuel-master -r 8192 \
 -f /vms/fuel-master.qcow2 -s 150 \
--c /iso/MirantisOpenStack-8.0.iso \
+-c /iso/MirantisOpenStack-9.0.iso \
 --network network=pxe-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 ```
@@ -128,7 +128,7 @@ sudo virt-install -n compute1 -r 32768 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
---network network=private-net,model=virtio \
+--network network=management-net,model=virtio \
 --network network=tagged-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
@@ -137,7 +137,7 @@ sudo virt-install -n compute2 -r 32768 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
---network network=private-net,model=virtio \
+--network network=management-net,model=virtio \
 --network network=tagged-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
@@ -146,7 +146,7 @@ sudo virt-install -n compute3 -r 32768 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
---network network=private-net,model=virtio \
+--network network=management-net,model=virtio \
 --network network=tagged-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=8
 
@@ -155,7 +155,7 @@ sudo virt-install -n controller -r 8192 \
 -c /iso/ipxe.iso \
 --network network=pxe-net,model=virtio \
 --network network=public-net,model=virtio \
---network network=private-net,model=virtio \
+--network network=management-net,model=virtio \
 --network network=tagged-net,model=virtio \
 --video=vmvga --graphics vnc,listen=0.0.0.0 --noautoconsole -v --vcpus=4
 
